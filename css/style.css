@@ -32,11 +32,12 @@ main {
   background-color: white;
   width: 300px;
   text-align: center;
+  margin: 100px; /* just to get it off the top of the browser */
 }
 
 #status {
   text-align: right;
-  margin: 10px 10px 0 0;
+  margin: 10px 10px 0 10px;
   color: gray
 }
 
@@ -69,7 +70,6 @@ img {
   padding: 10px 0;
 }
 
-
 #contact {
   display: flex;
 }
@@ -87,8 +87,93 @@ img {
 
 #phone {
   background-color: #24d194;
+  grid-area: phone;
 }
 
 #textMsg {
   background-color: #1a9c6e;
+  grid-area: textMsg;
+}
+
+
+@media only screen and (min-width: 768px) {
+  
+  main {
+    width: 525px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    'status name'
+    'img occupation'
+    'img brand'
+    'contact offer';
+  }
+
+  #status {
+    text-align: left;
+    grid-area: status;
+  }
+
+  img {
+    align-self: center;
+    place-self: center;
+    grid-area: img;
+  }
+
+  #contact {
+    grid-area: contact;
+  }
+
+  #brand {
+    display: flex;
+    grid-area: brand;
+  }
+  
+  #brand > p {
+    border-left: 3px solid #24d194;
+    padding-left: 10px;
+    line-height: 140%;
+    margin: 10px 0;
+
+  }
+  
+  #name {
+    grid-area: name;
+    padding-top: 20px;
+    margin: 0;
+  }
+  
+  #occupation {
+    grid-area: occupation;
+  }
+
+  #occupation > p {
+    margin: 0;
+  }
+
+  #offer {
+    grid-area: offer;
+    padding: 10px;
+  }
+  
+  #offer > p {
+    align-self: center;
+    margin: 0px;
+  }
+  
+  #brand,
+  #offer {
+    font-size: 14px;
+  }
+
+  #name, 
+  #occupation,
+  #brand, 
+  #offer {
+    padding-left: 15px;
+    text-align: left;
+    background-color: #e8eded;
+  }
+
 }
