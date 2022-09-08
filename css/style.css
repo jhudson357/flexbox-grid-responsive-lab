@@ -87,12 +87,10 @@ img {
 
 #phone {
   background-color: #24d194;
-  grid-area: phone;
 }
 
 #textMsg {
   background-color: #1a9c6e;
-  grid-area: textMsg;
 }
 
 
